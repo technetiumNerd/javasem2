@@ -18,22 +18,14 @@ public class Main {
     printArray(strArr);
     printSearchString(strArr, "lille");
     printSearchString(strArr, "stor");
-
-    Arrays.binarySearch(strArr, "stor");
   }
   public static void printSearchString(String[] arr, String s) {
-    if (searchString(arr, s)) System.out.println(String.format("String %s found", s));
+    if (Arrays.binarySearch(arr, s) > -1) System.out.println(String.format("String %s found", s));
     else System.out.println(String.format("String %s not found", s));
   }
-  public static boolean searchString(String[] arr, String s) {
-    return Arrays.binarySearch(arr, s) > -1;
-  }
   public static void printSearchNumber(int[] arr, int i) {
-    if (searchNumber(arr, i)) System.out.println(String.format("Number %d found", i));
+    if (Arrays.binarySearch(arr, i) > -1) System.out.println(String.format("Number %d found", i));
     else System.out.println(String.format("Number %d not found", i));
-  }
-  public static boolean searchNumber(int[] arr, int i) {
-    return Arrays.binarySearch(arr, i) > -1;
   }
   public static void printArray(int[] arr) {
     for (int i : arr) {
